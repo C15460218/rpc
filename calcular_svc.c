@@ -29,15 +29,15 @@ _restar_1 (restar_1_argument *argp, struct svc_req *rqstp)
 }
 
 static int *
-_multiplica_1 (multiplica_1_argument *argp, struct svc_req *rqstp)
+_multiplicar_1 (multiplicar_1_argument *argp, struct svc_req *rqstp)
 {
-	return (multiplica_1_svc(argp->a, argp->b, rqstp));
+	return (multiplicar_1_svc(argp->a, argp->b, rqstp));
 }
 
 static float *
-_divide_1 (divide_1_argument *argp, struct svc_req *rqstp)
+_dividir_1 (dividir_1_argument *argp, struct svc_req *rqstp)
 {
-	return (divide_1_svc(argp->a, argp->b, rqstp));
+	return (dividir_1_svc(argp->a, argp->b, rqstp));
 }
 
 static void
@@ -46,8 +46,8 @@ calcular_1(struct svc_req *rqstp, register SVCXPRT *transp)
 	union {
 		sumar_1_argument sumar_1_arg;
 		restar_1_argument restar_1_arg;
-		multiplica_1_argument multiplica_1_arg;
-		divide_1_argument divide_1_arg;
+		multiplicar_1_argument multiplicar_1_arg;
+		dividir_1_argument dividir_1_arg;
 	} argument;
 	char *result;
 	xdrproc_t _xdr_argument, _xdr_result;
@@ -70,16 +70,16 @@ calcular_1(struct svc_req *rqstp, register SVCXPRT *transp)
 		local = (char *(*)(char *, struct svc_req *)) _restar_1;
 		break;
 
-	case multiplica:
-		_xdr_argument = (xdrproc_t) xdr_multiplica_1_argument;
+	case multiplicar:
+		_xdr_argument = (xdrproc_t) xdr_multiplicar_1_argument;
 		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) _multiplica_1;
+		local = (char *(*)(char *, struct svc_req *)) _multiplicar_1;
 		break;
 
-	case divide:
-		_xdr_argument = (xdrproc_t) xdr_divide_1_argument;
+	case dividir:
+		_xdr_argument = (xdrproc_t) xdr_dividir_1_argument;
 		_xdr_result = (xdrproc_t) xdr_float;
-		local = (char *(*)(char *, struct svc_req *)) _divide_1;
+		local = (char *(*)(char *, struct svc_req *)) _dividir_1;
 		break;
 
 	default:

@@ -44,15 +44,15 @@ restar_1(int a, int b,  CLIENT *clnt)
 }
 
 int *
-multiplica_1(int a, int b,  CLIENT *clnt)
+multiplicar_1(int a, int b,  CLIENT *clnt)
 {
-	multiplica_1_argument arg;
+	multiplicar_1_argument arg;
 	static int clnt_res;
 
 	memset((char *)&clnt_res, 0, sizeof(clnt_res));
 	arg.a = a;
 	arg.b = b;
-	if (clnt_call (clnt, multiplica, (xdrproc_t) xdr_multiplica_1_argument, (caddr_t) &arg,
+	if (clnt_call (clnt, multiplicar, (xdrproc_t) xdr_multiplicar_1_argument, (caddr_t) &arg,
 		(xdrproc_t) xdr_int, (caddr_t) &clnt_res,
 		TIMEOUT) != RPC_SUCCESS) {
 		return (NULL);
@@ -61,15 +61,15 @@ multiplica_1(int a, int b,  CLIENT *clnt)
 }
 
 float *
-divide_1(int a, int b,  CLIENT *clnt)
+dividir_1(int a, int b,  CLIENT *clnt)
 {
-	divide_1_argument arg;
+	dividir_1_argument arg;
 	static float clnt_res;
 
 	memset((char *)&clnt_res, 0, sizeof(clnt_res));
 	arg.a = a;
 	arg.b = b;
-	if (clnt_call (clnt, divide, (xdrproc_t) xdr_divide_1_argument, (caddr_t) &arg,
+	if (clnt_call (clnt, dividir, (xdrproc_t) xdr_dividir_1_argument, (caddr_t) &arg,
 		(xdrproc_t) xdr_float, (caddr_t) &clnt_res,
 		TIMEOUT) != RPC_SUCCESS) {
 		return (NULL);

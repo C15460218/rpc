@@ -26,7 +26,7 @@ xdr_restar_1_argument (XDR *xdrs, restar_1_argument *objp)
 }
 
 bool_t
-xdr_multiplica_1_argument (XDR *xdrs, multiplica_1_argument *objp)
+xdr_multiplicar_1_argument (XDR *xdrs, multiplicar_1_argument *objp)
 {
 	 if (!xdr_int (xdrs, &objp->a))
 		 return FALSE;
@@ -36,7 +36,7 @@ xdr_multiplica_1_argument (XDR *xdrs, multiplica_1_argument *objp)
 }
 
 bool_t
-xdr_divide_1_argument (XDR *xdrs, divide_1_argument *objp)
+xdr_dividir_1_argument (XDR *xdrs, dividir_1_argument *objp)
 {
 	 if (!xdr_int (xdrs, &objp->a))
 		 return FALSE;

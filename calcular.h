@@ -26,17 +26,17 @@ struct restar_1_argument {
 };
 typedef struct restar_1_argument restar_1_argument;
 
-struct multiplica_1_argument {
+struct multiplicar_1_argument {
 	int a;
 	int b;
 };
-typedef struct multiplica_1_argument multiplica_1_argument;
+typedef struct multiplicar_1_argument multiplicar_1_argument;
 
-struct divide_1_argument {
+struct dividir_1_argument {
 	int a;
 	int b;
 };
-typedef struct divide_1_argument divide_1_argument;
+typedef struct dividir_1_argument dividir_1_argument;
 
 #define CALCULAR 999999999
 #define UNO 1
@@ -48,12 +48,12 @@ extern  int * sumar_1_svc(int , int , struct svc_req *);
 #define restar 2
 extern  int * restar_1(int , int , CLIENT *);
 extern  int * restar_1_svc(int , int , struct svc_req *);
-#define multiplica 3
-extern  int * multiplica_1(int , int , CLIENT *);
-extern  int * multiplica_1_svc(int , int , struct svc_req *);
-#define divide 4
-extern  float * divide_1(int , int , CLIENT *);
-extern  float * divide_1_svc(int , int , struct svc_req *);
+#define multiplicar 3
+extern  int * multiplicar_1(int , int , CLIENT *);
+extern  int * multiplicar_1_svc(int , int , struct svc_req *);
+#define dividir 4
+extern  float * dividir_1(int , int , CLIENT *);
+extern  float * dividir_1_svc(int , int , struct svc_req *);
 extern int calcular_1_freeresult (SVCXPRT *, xdrproc_t, caddr_t);
 
 #else /* K&R C */
@@ -63,12 +63,12 @@ extern  int * sumar_1_svc();
 #define restar 2
 extern  int * restar_1();
 extern  int * restar_1_svc();
-#define multiplica 3
-extern  int * multiplica_1();
-extern  int * multiplica_1_svc();
-#define divide 4
-extern  float * divide_1();
-extern  float * divide_1_svc();
+#define multiplicar 3
+extern  int * multiplicar_1();
+extern  int * multiplicar_1_svc();
+#define dividir 4
+extern  float * dividir_1();
+extern  float * dividir_1_svc();
 extern int calcular_1_freeresult ();
 #endif /* K&R C */
 
@@ -77,14 +77,14 @@ extern int calcular_1_freeresult ();
 #if defined(__STDC__) || defined(__cplusplus)
 extern  bool_t xdr_sumar_1_argument (XDR *, sumar_1_argument*);
 extern  bool_t xdr_restar_1_argument (XDR *, restar_1_argument*);
-extern  bool_t xdr_multiplica_1_argument (XDR *, multiplica_1_argument*);
-extern  bool_t xdr_divide_1_argument (XDR *, divide_1_argument*);
+extern  bool_t xdr_multiplicar_1_argument (XDR *, multiplicar_1_argument*);
+extern  bool_t xdr_dividir_1_argument (XDR *, dividir_1_argument*);
 
 #else /* K&R C */
 extern bool_t xdr_sumar_1_argument ();
 extern bool_t xdr_restar_1_argument ();
-extern bool_t xdr_multiplica_1_argument ();
-extern bool_t xdr_divide_1_argument ();
+extern bool_t xdr_multiplicar_1_argument ();
+extern bool_t xdr_dividir_1_argument ();
 
 #endif /* K&R C */
 
